@@ -1,3 +1,6 @@
+// link do video: https://youtu.be/YWsLIIrxJ2c
+// link colabeduc: http://www.colabeduc.org/projeto/show/549
+
 var tela = 1;
 var largura_menu = 250;
 var altura_menu = 60;
@@ -19,6 +22,8 @@ var xEli = 95;
 var yEli = 265;
 var xcole = 375;
 var ycole = 245;
+var yacido = 245;
+var yEli2 = 265;
 var pontos = 0;
 
 function preload(){
@@ -27,6 +32,7 @@ function preload(){
     eu = loadImage("eu.jpeg");
     eri = loadImage("Erivaldo.jpg");
     cole = loadImage("monstro.png");
+    acid = loadImage("acido.png");
   
     idle[0] = loadImage("Idle(1).png");
     idle[1] = loadImage("Idle(2).png");
@@ -249,17 +255,29 @@ function draw() {
   
   else if(tela == 5){
     ellipse(xEli, yEli , 55, 55);
+    ellipse(320, yEli2, 42.6, 42.6);
     stroke(0);
     strokeWeight(6);
     image(img, 0, 0);
     fill(100);
     rect(0, 140, 600, 240);
     image(cole, xcole, ycole, 43, 43);
+    image(acid, 300, yacido, 42.6, 42.6);
+    
   
     
     if(xEli >= 375 && xEli <= 418 && yEli >= 245 && yEli <= 288){
       text("Coletou!", 10, 260);
       pontos = 2;
+    }
+    
+    if(xEli >= 300 && yEli == yEli2){
+      text("Bateu!", 10, 300);
+      xChar = 50;
+      yChar = 220;
+      
+      xEli = 95;
+      yEli = 265;
     }
     
   
@@ -272,6 +290,8 @@ function draw() {
     textSize(25);
     text("Fase 2: Colete a mistura e alcance o Óxido de Alumínio", 10, 150, 300, 100);
     text("Pontos: "+pontos, 10, 100);
+    textSize(15);
+    text("Cuidado com o ácido", 10, 365);
     
     textSize(20);
     text("Al2F3", 458, 268);
@@ -308,7 +328,7 @@ function draw() {
       xEli = 95;
       yEli = 265;
     }
-    
+    moveAcid();
     moveChar2();
   }
   
