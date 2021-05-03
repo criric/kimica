@@ -271,7 +271,7 @@ function draw() {
       pontos = 2;
     }
     
-    if(xEli >= 300 && yEli == yEli2){
+    if(xEli >= 300 && xEli <= 340 && yEli == yEli2){
       text("Bateu!", 10, 300);
       xChar = 50;
       yChar = 220;
