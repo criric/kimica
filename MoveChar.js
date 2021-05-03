@@ -1,3 +1,4 @@
+var incre = 2;
 function moveChar(){
     tempo2++
     image(idle[cont_2%10], xChar, yChar, 94.5, 92.67)
@@ -144,8 +145,8 @@ function moveChar(){
 }
 
 function moveChar2(){
-  tempo2++
-    image(idle[cont_2%10], xChar, yChar, 94.5, 92.67)
+    tempo2++
+    image(idle[cont_2%10], xChar, yChar, 94.5, 92.67);
     if(tempo2 > 4){
     cont_2 ++;
     tempo2 = 0
@@ -159,11 +160,15 @@ function moveChar2(){
       rect(450, 230, 75, 60);
       rect(450, 310, 83, 60);
       image(cole, xcole, ycole, 43, 43);
+      image(acid, 300, yacido, 42.6, 42.6);
       
       fill(256);
       textSize(25);
       text("Fase 2: Colete a mistura e alcance o Óxido de Alumínio", 10, 150, 300, 100);
     
+      textSize(15);
+      text("Cuidado com o ácido", 10, 365);
+      
       textSize(20);
       text("Al2F3", 458, 268);
       text("Al2O3", 457, 188);
@@ -195,11 +200,15 @@ function moveChar2(){
       rect(450, 230, 75, 60);
       rect(450, 310, 83, 60);
       image(cole, xcole, ycole, 43, 43);
+      image(acid, 300, yacido, 42.6, 42.6);
       
       fill(256);
       textSize(25);
       text("Fase 2: Colete a mistura e alcance o Óxido de Alumínio", 10, 150, 300, 100);
     
+      textSize(15);
+      text("Cuidado com o ácido", 10, 365);
+      
       textSize(20);
       text("Al2F3", 458, 268);
       text("Al2O3", 457, 188);
@@ -231,11 +240,15 @@ function moveChar2(){
       rect(450, 230, 75, 60);
       rect(450, 310, 83, 60);
       image(cole, xcole, ycole, 43, 43);
+      image(acid, 300, yacido, 42.6, 42.6);
       
       fill(256);
       textSize(25);
       text("Fase 2: Colete a mistura e alcance o Óxido de Alumínio", 10, 150, 300, 100);
-    
+      
+      textSize(15);
+      text("Cuidado com o ácido", 10, 365);
+      
       textSize(20);
       text("Al2F3", 458, 268);
       text("Al2O3", 457, 188);
@@ -267,11 +280,14 @@ function moveChar2(){
       rect(450, 230, 75, 60);
       rect(450, 310, 83, 60);
       image(cole, xcole, ycole, 43, 43);
+      image(acid, 300, yacido, 42.6, 42.6);
       
       fill(256);
       textSize(25);
       text("Fase 2: Colete a mistura e alcance o Óxido de Alumínio", 10, 150, 300, 100);
-    
+      textSize(15);
+      text("Cuidado com o ácido", 10, 365);
+      
       textSize(20);
       text("Al2F3", 458, 268);
       text("Al2O3", 457, 188);
@@ -290,4 +306,15 @@ function moveChar2(){
         yEli = 265;
       }
     }
+}
+
+function moveAcid(){
+  yacido += incre;
+  yEli2 += incre;
+  if(yacido > 339){
+    incre = incre*-1;
+  }
+  if(yacido < 140){
+    incre = incre*-1;
+  }
 }
